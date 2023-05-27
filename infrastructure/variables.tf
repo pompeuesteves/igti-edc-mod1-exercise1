@@ -3,7 +3,7 @@ variable "aws_region" {
 }
 
 variable "account" {
-  default = 713051429766
+  default = "713051429766"
 }
 
 variable "tags" {
