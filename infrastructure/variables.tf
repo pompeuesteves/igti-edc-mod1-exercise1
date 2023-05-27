@@ -7,9 +7,9 @@ variable "account" {
 }
 
 variable "tags" {
-  type = map
+  type = map(any)
   default = {
-    IES      = "IGTI"
-    CURSO    = "EDC"
+    IES   = "IGTI"
+    CURSO = "EDC"
   }
 }
