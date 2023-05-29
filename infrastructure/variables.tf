@@ -9,7 +9,16 @@ variable "account" {
 variable "tags" {
   type = map(any)
   default = {
-    IES   = "IGTI"
-    CURSO = "EDC"
+    IES       = "IGTI"
+    CURSO     = "EDC"
+    ManagedBy = "Terraform"
   }
+}
+
+variable "name_role_glue" {
+  default = "AWSGlueServiceRole-IGTI"
+}
+
+variable "name_policy_glue" {
+  default = "AWSGluePolicy-DatalakeIGTI"
 }
