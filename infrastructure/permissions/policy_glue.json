@@ -12,7 +12,7 @@
             "arn:aws:s3:::datalake-guilherme-713051429766/*",
             "arn:aws:s3:::datalake-igti-edc-raw-zone-713051429766-tf/*",
             "arn:aws:s3:::datalake-igti-edc-staging-zone-713051429766-tf/*",
-            "arn:aws:s3:::datalake-igti-edc-713051429766-tf"
+            "arn:aws:s3:::datalake-igti-edc-713051429766-tf/*"
         ]
       }
   ]
