@@ -15,7 +15,6 @@ resource "aws_glue_job" "enem" {
   number_of_workers      = 2
   max_retries            = 0
   timeout                = 30
-  security_configuration = "none"
 
   command {
     script_location = "s3://aws-glue-igti-${var.account}-${var.aws_region}/scripts/microdados_enem_2020_exe1.py"
