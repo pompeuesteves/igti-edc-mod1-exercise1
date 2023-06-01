@@ -19,6 +19,16 @@ resource "aws_iam_role_policy_attachment" "glue_attach" {
   policy_arn = aws_iam_policy.glue.arn
 }
 
+resource "aws_iam_role_policy_attachment" "glue_attach_AWSGlueServiceRole" {
+  role       = aws_iam_role.glue.name
+  policy_arn = "arn:aws:iam::aws:policy/service-role/AWSGlueServiceRole"
+}
+
+resource "aws_iam_role_policy_attachment" "glue_attach_AWSGlueConsoleFullAccess" {
+  role       = aws_iam_role.glue.name
+  policy_arn = "arn:aws:iam::aws:policy/AWSGlueConsoleFullAccess"
+}
+
 resource "aws_iam_role" "glue_from_import" {
   name = "AWSGlueServiceRole-testeigti-tf"
   tags = var.tags
@@ -36,4 +46,9 @@ resource "aws_iam_role" "glue_from_import" {
       Version = "2012-10-17"
     }
   )
+}
+
+resource "aws_iam_role_policy_attachment" "glue_attach_teste" {
+  role       = aws_iam_role.glue_from_import.name
+  policy_arn = aws_iam_policy.glue.arn
 }
