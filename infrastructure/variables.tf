@@ -16,9 +16,9 @@ variable "tags" {
 }
 
 variable "name_role_glue" {
-  default = "AWSGlueServiceRole-IGTI"
+  default = "AWSGlueServiceRole-IGTI-tf"
 }
 
 variable "name_policy_glue" {
-  default = "AWSGluePolicy-DatalakeIGTI"
+  default = "AWSGluePolicy-DatalakeIGTI-tf"
 }

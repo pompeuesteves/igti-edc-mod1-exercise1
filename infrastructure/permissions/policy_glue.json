@@ -4,10 +4,16 @@
       {
           "Effect": "Allow",
           "Action": [
-              "s3:*",
-              "s3-object-lambda:*"
+            "s3:GetObject",
+            "s3:PutObject",
+            "s3:DeleteObject"
           ],
-          "Resource": "*"
+          "Resource": [
+            "arn:aws:s3:::datalake-guilherme-713051429766/*",
+            "arn:aws:s3:::datalake-igti-edc-raw-zone-713051429766-tf/*",
+            "arn:aws:s3:::datalake-igti-edc-staging-zone-713051429766-tf/*",
+            "arn:aws:s3:::datalake-igti-edc-713051429766-tf"
+        ]
       }
   ]
 }
