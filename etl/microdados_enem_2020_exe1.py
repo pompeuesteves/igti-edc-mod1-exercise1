@@ -16,12 +16,12 @@ job.init(args['JOB_NAME'], args)
 
 #Ler dados do enem 2020
 enem = (
-    spark.read.format("csv").option("header", True).option("inferSchema",True).option("delimiter",";").load("s3://datalake-guilherme-713051429766/raw-data/")
+    spark.read.format("csv").option("header", True).option("inferSchema",True).option("delimiter",";").load("s3://datalake-igti-edc-713051429766-tf/raw-data/")
     )
 
 #Salvar dados do enem 2020 formato parquet
 (
-    enem.write.mode("overwrite").format("parquet").partitionBy("NU_ANO").save("s3://datalake-guilherme-713051429766/consumer-zone/")
+    enem.write.mode("overwrite").format("parquet").partitionBy("NU_ANO").save("s3://datalake-igti-edc-713051429766-tf/consumer-zone/")
     )
 
 job.commit()

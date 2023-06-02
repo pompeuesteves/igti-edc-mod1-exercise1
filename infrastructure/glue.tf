@@ -57,6 +57,6 @@ resource "aws_glue_crawler" "enem" {
   table_prefix  = "enem2020-"
 
   s3_target {
-    path = "s3://datalake-igti-edc-${var.account}-tf/enem/"
+    path = "s3://datalake-igti-edc-${var.account}-tf/consumer-zone/"
   }
 }
