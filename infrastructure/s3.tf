@@ -7,7 +7,7 @@ resource "aws_s3_bucket_server_side_encryption_configuration" "dl" {
   bucket = aws_s3_bucket.dl.id
   rule {
     apply_server_side_encryption_by_default {
-      sse_algorithm = "AES256"      
+      sse_algorithm = "AES256"
     }
   }
 }
@@ -15,14 +15,14 @@ resource "aws_s3_bucket_server_side_encryption_configuration" "dl" {
 resource "aws_s3_bucket_ownership_controls" "dl" {
   bucket = aws_s3_bucket.dl.id
   rule {
-    object_ownership = "BucketOwnerEnforced"
+    object_ownership = "BucketOwnerPreferred"
   }
 }
 
 resource "aws_s3_bucket_acl" "dl" {
-  depends_on = [ aws_s3_bucket_ownership_controls.dl ]
-  bucket = aws_s3_bucket.dl.id
-  acl    = "private"
+  depends_on = [aws_s3_bucket_ownership_controls.dl]
+  bucket     = aws_s3_bucket.dl.id
+  acl        = "private"
 }
 
 resource "aws_s3_bucket" "aws_glue_assets" {
