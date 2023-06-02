@@ -39,7 +39,16 @@ resource "aws_s3_bucket_server_side_encryption_configuration" "aws_glue_assets" 
   }
 }
 
+resource "aws_s3_bucket_ownership_controls" "aws_glue_assets" {
+  bucket = aws_s3_bucket.aws_glue_assets.id
+  rule {
+    object_ownership = "BucketOwnerPreferred"
+  }
+}
+
 resource "aws_s3_bucket_acl" "aws_glue_assets" {
+  depends_on = [aws_s3_bucket_ownership_controls.aws_glue_assets]
   bucket = aws_s3_bucket.aws_glue_assets.id
   acl    = "private"
 }
+
