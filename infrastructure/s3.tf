@@ -1,5 +1,6 @@
 resource "aws_s3_bucket" "dl" {
   bucket = "datalake-igti-edc-${var.account}-tf"
+  force_destroy = true
   tags   = var.tags
 }
 
@@ -27,6 +28,7 @@ resource "aws_s3_bucket_acl" "dl" {
 
 resource "aws_s3_bucket" "aws_glue_assets" {
   bucket = "aws-glue-igti-${var.account}-${var.aws_region}"
+  force_destroy = true
   tags   = var.tags
 }
 
